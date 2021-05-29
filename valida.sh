@@ -21,7 +21,7 @@ echo "                    <TD><FONT COLOR=white>DATA</TD>"
 echo "                </TR>"
 for i in $URL; do
 DATA=$(date)
-echo "<TD align=center>" $i "</TD>"
+echo "                  <TD align=center>" $i "</TD>"
 http_resp=`curl $i -o /dev/null -s -w "%{http_code} %{time_total}"`
 http_code=`echo $http_resp | awk -F" " '{ print $1}'`
 http_time=`echo $http_resp | awk -F" " '{ print $2}'`
